@@ -1,6 +1,7 @@
 package com.hakler.truss;
 
 import java.awt.Canvas;
+import java.awt.Color;
 import java.awt.GraphicsEnvironment;
 
 import javax.swing.JFrame;
@@ -16,6 +17,8 @@ public class Window {
             .getDefaultScreenDevice()
             .getDefaultConfiguration());
 
+        canvas.setIgnoreRepaint(true);
+        canvas.setBackground(Color.BLACK);
         canvas.setSize(width, height);
         
         frame.add(canvas);
