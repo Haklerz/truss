@@ -8,6 +8,7 @@ public class Main {
 
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
+        frame.setLocationRelativeTo(null);
         frame.setVisible(true);
     }
 }
