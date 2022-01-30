@@ -7,6 +7,7 @@ public class Main {
         JFrame frame = new JFrame("Truss");
 
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        frame.setSize(400, 300);
 
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
