@@ -23,6 +23,7 @@ public class Window {
         
         frame.add(canvas);
         frame.pack();
+        frame.setMinimumSize(frame.getSize());
 
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
