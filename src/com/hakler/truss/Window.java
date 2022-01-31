@@ -4,6 +4,8 @@ import javax.swing.JFrame;
 
 public class Window {
 
+    private JFrame window;
+
     public Window(String title, int width, int height) {
         window = new JFrame(title);
         window.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -14,7 +16,8 @@ public class Window {
         window.setLocationRelativeTo(null);
     }
 
-        frame.setVisible(true);
+    public void show() {
+        window.setVisible(true);
     }
 
 }
