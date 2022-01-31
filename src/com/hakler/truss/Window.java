@@ -1,8 +1,5 @@
 package com.hakler.truss;
 
-import java.awt.Canvas;
-import java.awt.Color;
-
 import javax.swing.JFrame;
 
 public class Window {
@@ -11,14 +8,7 @@ public class Window {
         JFrame frame = new JFrame(title);
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
-        Canvas canvas = new Canvas(DefaultGraphicsConfiguration.getInstance());
-
-        canvas.setIgnoreRepaint(true);
-        canvas.setBackground(Color.BLACK);
-        canvas.setSize(width, height);
-
-        frame.add(canvas);
-
+        frame.add(new FrameBuffer(width, height));
         frame.pack();
         frame.setMinimumSize(frame.getSize());
         frame.setLocationRelativeTo(null);
