@@ -5,13 +5,14 @@ import javax.swing.JFrame;
 public class Window {
 
     public Window(String title, int width, int height) {
-        JFrame frame = new JFrame(title);
-        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        window = new JFrame(title);
+        window.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
-        frame.add(new FrameBuffer(width, height));
-        frame.pack();
-        frame.setMinimumSize(frame.getSize());
-        frame.setLocationRelativeTo(null);
+        window.add(new FrameBuffer(width, height));
+        window.pack();
+        window.setMinimumSize(window.getSize());
+        window.setLocationRelativeTo(null);
+    }
 
         frame.setVisible(true);
     }
