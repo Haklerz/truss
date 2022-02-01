@@ -2,18 +2,22 @@ package com.hakler.truss;
 
 import javax.swing.JFrame;
 
-public class Window {
+public class Window extends JFrame {
 
-    private JFrame window;
+    private FrameBufferRenderer renderer;
 
     public Window(String title, int width, int height) {
-        window = new JFrame(title);
-        window.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        super(title);
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        setResizable(false);
 
-        window.add(new FrameBufferRenderer(new FrameBuffer(width, height)));
-        window.pack();
-        window.setMinimumSize(window.getSize());
-        window.setLocationRelativeTo(null);
+        this.renderer = new FrameBufferRenderer(width, height);
+
+        add(renderer);
+        pack();
+        setLocationRelativeTo(null);
+        
+        renderer.createBackBuffer();
     }
 
     public void show() {
