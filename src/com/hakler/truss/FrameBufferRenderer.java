@@ -1,20 +1,35 @@
 package com.hakler.truss;
 
 import java.awt.Canvas;
-import java.awt.Color;
+import java.awt.Graphics2D;
+import java.awt.image.BufferStrategy;
 
 public class FrameBufferRenderer extends Canvas {
 
-    private FrameBuffer frameBuffer;
+    private FrameBuffer frontBuffer;
+    private BufferStrategy backBuffer;
 
-    public FrameBufferRenderer(FrameBuffer frameBuffer) {
+    public FrameBufferRenderer(int width, int height) {
         super(DefaultGraphicsConfiguration.getInstance());
 
         setIgnoreRepaint(true);
-        setBackground(Color.BLACK);
-        setSize(frameBuffer.getWidth(), frameBuffer.getHeight());
+        setSize(width, height);
 
-        this.frameBuffer = frameBuffer;
+        this.frontBuffer = new FrameBuffer(width, height);
+    }
+
+    public void createBackBuffer() {
+        createBufferStrategy(2);
+        backBuffer = getBufferStrategy();
+    }
+
+    public void flipFrameBuffers() {
+        Graphics2D graphics = (Graphics2D) backBuffer.getDrawGraphics();
+
+        graphics.drawImage(frontBuffer.asBufferedImage(), 0, 0, frontBuffer.getWidth(), frontBuffer.getHeight(), null);
+        
+        graphics.dispose();
+        backBuffer.show();
     }
     
 }
