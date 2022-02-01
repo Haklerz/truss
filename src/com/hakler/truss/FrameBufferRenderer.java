@@ -5,12 +5,16 @@ import java.awt.Color;
 
 public class FrameBufferRenderer extends Canvas {
 
-    public FrameBufferRenderer(int width, int height) {
+    private FrameBuffer frameBuffer;
+
+    public FrameBufferRenderer(FrameBuffer frameBuffer) {
         super(DefaultGraphicsConfiguration.getInstance());
 
         setIgnoreRepaint(true);
         setBackground(Color.BLACK);
-        setSize(width, height);
+        setSize(frameBuffer.getWidth(), frameBuffer.getHeight());
+
+        this.frameBuffer = frameBuffer;
     }
     
 }
