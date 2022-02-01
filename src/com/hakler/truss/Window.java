@@ -20,8 +20,12 @@ public class Window extends JFrame {
         renderer.createBackBuffer();
     }
 
-    public void show() {
-        window.setVisible(true);
+    public void start() {
+        setVisible(true);
+
+        while (isDisplayable()) {
+            renderer.flipFrameBuffers();
+        }
     }
 
 }
