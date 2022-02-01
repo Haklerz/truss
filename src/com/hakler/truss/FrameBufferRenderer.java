@@ -3,9 +3,9 @@ package com.hakler.truss;
 import java.awt.Canvas;
 import java.awt.Color;
 
-public class FrameBuffer extends Canvas {
+public class FrameBufferRenderer extends Canvas {
 
-    public FrameBuffer(int width, int height) {
+    public FrameBufferRenderer(int width, int height) {
         super(DefaultGraphicsConfiguration.getInstance());
 
         setIgnoreRepaint(true);

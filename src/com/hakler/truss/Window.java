@@ -10,7 +10,7 @@ public class Window {
         window = new JFrame(title);
         window.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
-        window.add(new FrameBuffer(width, height));
+        window.add(new FrameBufferRenderer(width, height));
         window.pack();
         window.setMinimumSize(window.getSize());
         window.setLocationRelativeTo(null);
