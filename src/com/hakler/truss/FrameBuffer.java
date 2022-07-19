@@ -4,7 +4,6 @@ import java.awt.Transparency;
 import java.awt.image.BufferedImage;
 
 public class FrameBuffer {
-
 	private BufferedImage image;
 	private int width, height;
 

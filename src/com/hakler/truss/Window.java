@@ -3,7 +3,6 @@ package com.hakler.truss;
 import javax.swing.JFrame;
 
 public class Window extends JFrame {
-
 	private FrameBufferRenderer renderer;
 
 	public Window(String title, int width, int height) {
@@ -16,7 +15,7 @@ public class Window extends JFrame {
 		add(renderer);
 		pack();
 		setLocationRelativeTo(null);
-		
+
 		renderer.createBackBuffer();
 	}
 
@@ -27,5 +26,4 @@ public class Window extends JFrame {
 			renderer.flipFrameBuffers();
 		}
 	}
-
 }

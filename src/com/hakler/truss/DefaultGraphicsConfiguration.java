@@ -8,10 +8,8 @@ public class DefaultGraphicsConfiguration {
 
 	public static GraphicsConfiguration getInstance() {
 		if (instance == null) {
-			instance = GraphicsEnvironment
-					.getLocalGraphicsEnvironment()
-					.getDefaultScreenDevice()
-					.getDefaultConfiguration();
+			instance = GraphicsEnvironment.getLocalGraphicsEnvironment()
+					.getDefaultScreenDevice().getDefaultConfiguration();
 		}
 
 		return instance;

@@ -5,7 +5,6 @@ import java.awt.Graphics2D;
 import java.awt.image.BufferStrategy;
 
 public class FrameBufferRenderer extends Canvas {
-
 	private FrameBuffer frontBuffer;
 	private BufferStrategy backBuffer;
 
@@ -26,10 +25,10 @@ public class FrameBufferRenderer extends Canvas {
 	public void flipFrameBuffers() {
 		Graphics2D graphics = (Graphics2D) backBuffer.getDrawGraphics();
 
-		graphics.drawImage(frontBuffer.asBufferedImage(), 0, 0, frontBuffer.getWidth(), frontBuffer.getHeight(), null);
-		
+		graphics.drawImage(frontBuffer.asBufferedImage(), 0, 0,
+				frontBuffer.getWidth(), frontBuffer.getHeight(), null);
+
 		graphics.dispose();
 		backBuffer.show();
 	}
-	
 }
