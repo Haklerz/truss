@@ -23,7 +23,12 @@ public class FrameBufferRenderer extends Canvas {
 	}
 
 	public void flipFrameBuffers() {
-		Graphics2D graphics = (Graphics2D) backBuffer.getDrawGraphics();
+		Graphics2D graphics = null;
+		try {
+			graphics = (Graphics2D) backBuffer.getDrawGraphics();
+		} catch (IllegalStateException e) {
+			return;
+		}
 
 		graphics.drawImage(frontBuffer.asBufferedImage(), 0, 0,
 				frontBuffer.getWidth(), frontBuffer.getHeight(), null);
